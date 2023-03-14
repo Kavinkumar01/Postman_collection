@@ -1,0 +1,375 @@
+{
+	"info": {
+		"_postman_id": "2fb875b7-6e8d-45a8-877b-b51d31876aa4",
+		"name": "SpringSecurity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18894350"
+	},
+	"item": [
+		{
+			"name": "register test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":1,\r\n    \"userName\":\"Kavin\",\r\n    \"password\":\"password\",\r\n    \"email\":\"kavin@gmail.com\",\r\n    \"roles\":[\r\n        {\r\n            \"roleName\": \"ADMIN\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8122/auth/admin/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8122",
+					"path": [
+						"auth",
+						"admin",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update role(only accessed by moderator and admin)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":1,\r\n    \"userName\":\"Kavin\",\r\n    \"password\":\"password\",\r\n    \"email\":\"kavin@gmail.com\",\r\n    \"roles\":[\r\n        {\r\n            \"roleName\": \"ADMIN\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8122/auth/admin/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8122",
+					"path": [
+						"auth",
+						"admin",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all users (only accessible by admin)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":1,\r\n    \"userName\":\"Kavin\",\r\n    \"password\":\"password\",\r\n    \"email\":\"kavin@gmail.com\",\r\n    \"roles\":[\r\n        {\r\n            \"roleName\": \"ADMIN\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8122/auth/admin/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8122",
+					"path": [
+						"auth",
+						"admin",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserOnly accessible url",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "kathirvel",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8124/user/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8124",
+					"path": [
+						"user",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View all",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "kathirvel",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8124/post/viewAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8124",
+					"path": [
+						"post",
+						"viewAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View all Approved",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "kathirvel",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8124/post/viewAllApproved",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8124",
+					"path": [
+						"post",
+						"viewAllApproved"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "approveAll",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "kathirvel",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8124/post/viewAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8124",
+					"path": [
+						"post",
+						"viewAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rejectAll",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "kumar",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8124/post/rejectAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8124",
+					"path": [
+						"post",
+						"rejectAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "approve by Id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "kathirvel",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8124/post/viewAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8124",
+					"path": [
+						"post",
+						"viewAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reject by Id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "kathirvel",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8124/post/reject/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8124",
+					"path": [
+						"post",
+						"reject",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"subject\":\"java\",\r\n    \"description\": \"java is fun\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8124/post/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8124",
+					"path": [
+						"post",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
